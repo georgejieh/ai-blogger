@@ -30,16 +30,16 @@ Although customized for one author’s editorial needs, the system is modular an
 
 ai-blogger/
 ├── .env                          # API credentials (not tracked)
-├── run\_pipeline.py              # Orchestrates end-to-end pipeline
+├── run_pipeline.py              # Orchestrates end-to-end pipeline
 ├── app/
 │   └── interface.py             # Gradio UI logic
 ├── modules/
-│   ├── deep\_research.py         # Perplexity Deep Research integration
-│   ├── sonar\_reasoning.py       # Sonar Pro for reasoning + fact-check
-│   ├── gpt\_formatter.py         # GPT‑4o-based tone & structure refinement
+│   ├── deep_research.py         # Perplexity Deep Research integration
+│   ├── sonar_reasoning.py       # Sonar Pro for reasoning + fact-check
+│   ├── gpt_formatter.py         # GPT‑4o-based tone & structure refinement
 │   └── prompts.py               # System prompt templates & dynamic injection
 ├── utils/
-│   ├── api\_helpers.py           # POST helpers for Perplexity APIs
+│   ├── api_helpers.py           # POST helpers for Perplexity APIs
 │   └── formatting.py            # Markdown/HTML formatting for output
 ├── outputs/
 │   ├── articles/                # Final blog articles (Markdown)
@@ -55,7 +55,7 @@ ai-blogger/
 
 ## Models Used
 
-- **OpenAI GPT‑4o**: OpenAI’s fastest and most capable model (as of 2024), used for tone polishing and formatting. Accessed via the official `openai` API with `model="gpt-4o"`.
+- **OpenAI GPT-4o**: OpenAI’s fastest and most capable model (as of 2024), used for tone polishing and formatting. Accessed via the official `openai` API with `model="gpt-4o"`.
 - **Perplexity Deep Research**: Generates a citation-rich initial draft based on reliable sources.
 - **Perplexity Sonar Reasoning Pro**: Strengthens logical structure and performs post-edit fact-checking. Supports multi-hop reasoning and CoT (Chain-of-Thought) prompting.
 
