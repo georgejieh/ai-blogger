@@ -7,7 +7,7 @@
 
 ## Overview
 
-**AI‑Blogger** is a personal-use AI writing pipeline originally developed to support *The Realist Ledger*, a policy-focused, nonpartisan blog. It automates long-form article creation through a multi-stage system of language models, generating well-structured, citation-backed, and fact-checked content.
+**AI-Blogger** is a personal-use AI writing pipeline originally developed to support *The Realist Ledger*, a policy-focused, nonpartisan blog. It automates long-form article creation through a multi-stage system of language models, generating well-structured, citation-backed, and fact-checked content.
 
 Although customized for one author’s editorial needs, the system is modular and expandable, enabling broader use cases with minimal modification.
 
@@ -44,12 +44,12 @@ ai-blogger/
 ├── outputs/
 │   ├── articles/                # Final blog articles (Markdown)
 │   └── factchecks/              # Fact-check results (JSON/text)
-├── pyproject.toml               # Poetry project config
-├── poetry.lock                  # Locked dependencies
+├── pyproject.toml               # Poetry project config (PEP 621)
+├── poetry.lock                  # Locked dependencies (should be committed)
 ├── .gitignore
 └── README.md
 
-````
+```
 
 ---
 
@@ -89,6 +89,8 @@ OPENAI_API_KEY=your_openai_key
 PERPLEXITY_API_KEY=your_perplexity_key
 ```
 
+> 🔐 Do **not** commit this file to version control. It contains sensitive API credentials.
+
 Ensure your OpenAI account has access to **GPT-4o**, and your Perplexity API supports **Sonar Reasoning Pro** and **Deep Research** models.
 
 ### 4. Install Dependencies
@@ -97,10 +99,21 @@ Ensure your OpenAI account has access to **GPT-4o**, and your Perplexity API sup
 poetry install
 ```
 
+> 📦 Dependencies and metadata are managed using `pyproject.toml` (PEP 621 compliant).
+> 💡 Keep `poetry.lock` under version control to ensure reproducible environments.
+
 ### 5. Activate Virtual Environment
 
+#### On **Windows** (PowerShell):
+
+```powershell
+& (poetry env info --path)\Scripts\Activate.ps1
+```
+
+#### On **macOS/Linux** (Bash):
+
 ```bash
-poetry shell
+source $(poetry env info --path)/bin/activate
 ```
 
 ### 6. Run the App
