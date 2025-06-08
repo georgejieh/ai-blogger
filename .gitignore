@@ -204,3 +204,10 @@ gradio_cached_examples/
 # Cache or intermediate files from Perplexity/OpenAI calls
 tmp/
 .cache/
+
+# Poetry virtual environment (if configured locally)
+.cache/
+.poetry/
+# Optional: ignore local virtualenvs if configured this way
+.env
+venv/
