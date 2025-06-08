@@ -192,3 +192,15 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Output files from blog pipeline
+outputs/
+outputs/articles/
+outputs/factchecks/
+
+# Gradio cached sessions
+gradio_cached_examples/
+
+# Cache or intermediate files from Perplexity/OpenAI calls
+tmp/
+.cache/
